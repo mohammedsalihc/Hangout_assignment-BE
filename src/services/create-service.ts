@@ -1,6 +1,8 @@
+import { RoomModel } from "../models/room/room-model";
 import { AuthModel } from "../models/user/auth-model";
 import { UserModel } from "../models/user/user-model";
-import { IAuth, IUser } from "../types/interfaces/auth-interface";
+import { IAuth,  IUser } from "../types/interfaces/auth-interface";
+import { IRoom } from "../types/interfaces/room-interface";
 
 export class CreateService {
 
@@ -10,5 +12,9 @@ export class CreateService {
 
     Auth = async(body:IAuth):Promise<IUser>=>{
         return await AuthModel.create(body)
+    }
+
+    Room = async(body:IRoom):Promise<IRoom>=>{
+        return await RoomModel.create(body)
     }
 }

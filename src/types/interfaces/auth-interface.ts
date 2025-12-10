@@ -1,5 +1,5 @@
 import { Moment } from "moment-timezone"
-import { ERole } from "../enums/enum"
+import { EActivityType, ERole } from "../enums/enum"
 
 
 export interface IUser {

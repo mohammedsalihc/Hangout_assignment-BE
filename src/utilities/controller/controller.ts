@@ -1,7 +1,7 @@
 import { Response } from "express";
 
-import { status_code } from "../types/constants/error-constants";
-import { IErrorCode, IServerError } from "../types/interfaces/server-interface";
+import { status_code } from "../../types/constants/error-constants";
+import { IErrorCode, IServerError } from "../../types/interfaces/server-interface";
 
 
 export class ControllerHandler {

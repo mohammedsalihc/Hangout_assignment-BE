@@ -1,6 +1,7 @@
 import express ,{ Application } from "express";
 import middlewares from "../middlewares/middlewares";
 import { ApiEndPoints } from "../../routes";
+import addSocketConnection from "../socket-io/socket";
 
 const app:Application = express()
 const startServer = ()=>{
@@ -8,6 +9,8 @@ const startServer = ()=>{
     middlewares(app)
     ApiEndPoints(app)
     const server = app.listen(port, () => console.log("server connected"))
+    const socket_connection = addSocketConnection(server)
+    app.set('socketConnection',socket_connection)
 }
 
 

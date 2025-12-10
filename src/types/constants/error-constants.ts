@@ -10,7 +10,8 @@ export const status_code: { [key: number]: string } = {
 
 export const error_code ={
     Body:1122,
-    Auth:1123
+    Auth:1123,
+    Room:1124
 }
 
 export const errorMessages = {
@@ -35,5 +36,13 @@ export const errorMessages = {
     incorrect_password:{
         message:"incorrect password",
        code:`${error_code?.Auth}_400`
+    },
+    invalid_room_type:{
+        message:"Invalid room type",
+        code:`${error_code?.Room}_400`
+    },
+    room_not_found:{
+        message:"room not found",
+        code:`${error_code?.Room}_400`
     }
 }

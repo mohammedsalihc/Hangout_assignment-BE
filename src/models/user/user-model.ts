@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { ERole } from "../../types/enums/enum";
-import { GetCurrentDateandTime } from "../../utilities/moment";
+import { GetCurrentDateandTime } from "../../utilities/moment/moment";
 import { IUser } from "../../types/interfaces/auth-interface";
 
 const schema = new mongoose.Schema({

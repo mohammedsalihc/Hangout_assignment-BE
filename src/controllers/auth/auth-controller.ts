@@ -4,11 +4,11 @@ import { errorMessages } from "../../types/constants/error-constants";
 import { ERole } from "../../types/enums/enum";
 import { IAuth, IToken, IUser } from "../../types/interfaces/auth-interface";
 import { ExpressRequest, ExpressResponse } from "../../types/interfaces/server-interface";
-import { BcryptHandler } from "../../utilities/bcrypt";
-import { ControllerHandler } from "../../utilities/controller";
-import { JwtHandler } from "../../utilities/jwt";
-import { GetCurrentDateandTime } from "../../utilities/moment";
-import { bodyRequiredValidator } from "../../utilities/validations";
+import { BcryptHandler } from "../../utilities/bcrypt/bcrypt";
+import { ControllerHandler } from "../../utilities/controller/controller";
+import { JwtHandler } from "../../utilities/jwt/jwt";
+import { GetCurrentDateandTime } from "../../utilities/moment/moment";
+import { bodyRequiredValidator } from "../../utilities/random-validations/validations";
 
 export class AuthController extends ControllerHandler{
     private detail_service = new DetailService()
@@ -72,6 +72,15 @@ export class AuthController extends ControllerHandler{
             }
             let token :IToken = await this.jwt.createToken(auth)
             this.jsonResponse(response,token)
+        } catch (e) {
+            this.error(response, 500, null, e);
+        }
+    };
+
+    Profile  = async (request: ExpressRequest, response: ExpressResponse) => {
+        try {
+            const user = await this.detail_service.User({_id:request?.user?._id})
+            this.jsonResponse(response,user)
         } catch (e) {
             this.error(response, 500, null, e);
         }
