@@ -80,7 +80,7 @@ Frontend is intentionally minimal as required in the assignment.
 - Vite + React
 - Axios
 - Socket.io-client
-- link : 
+- link : https://github.com/mohammedsalihc/hangout-FE.git
 
 ## ⚙ Running the Project
 
