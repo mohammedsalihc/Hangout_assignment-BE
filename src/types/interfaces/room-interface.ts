@@ -17,15 +17,7 @@ export interface IRoomParticipant{
     socket_ids?:string[]
 }
 
-export interface IRoomState{
-    current_page?:number,
-    scrolly?:number,
-    user?:string,
-    updated_at?:Moment
-}
-
 export interface IRoomData{
     participants?:IRoomParticipant[]
-    state?:IRoomState,
     created_at?:Moment
 }

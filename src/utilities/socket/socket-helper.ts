@@ -5,7 +5,6 @@ export const AddParticipant = (room_id: string, user_id: string, user_name:strin
     if (!RoomParticipants[room_id]) {
         RoomParticipants[room_id] = {
             participants: [],
-            state: {},
             created_at: GetCurrentDateandTime()
         };
     }
